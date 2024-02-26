@@ -8,7 +8,7 @@ get_changed_files.sh
 changed_files.zip
 # next.js
 /.next/
-/out/
+
 /.vscode/
 
 # testing
