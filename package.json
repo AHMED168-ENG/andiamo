@@ -69,7 +69,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start -p 3015"
+        "start": "NODE_ENV=production node server.js"
     },
     "browserslist": {
         "production": [
