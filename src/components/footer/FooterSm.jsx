@@ -43,7 +43,7 @@ const FooterSm = (props) => {
                                     />
                                 </Link>
                                 <DownloadComponent className="download-component" />
-                                <LetsConnect />
+                                {/* <LetsConnect /> */}
                             </Grid>
                             <Grid item xs={12} md={3} sx={{ mt: 3 }}>
                                 <Box textAlign={'center'}>
