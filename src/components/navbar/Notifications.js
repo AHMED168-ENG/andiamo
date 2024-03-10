@@ -71,7 +71,7 @@ const Notifications = () => {
             >
 
                   <CustomStack>
-                       <Typography sx={{ fontSize: '18px', color: '#EF7822' }}>
+                       <Typography sx={{ fontSize: '18px', color: '#d80707' }}>
 
                            {t('Notification')}
                        </Typography>

@@ -14,7 +14,7 @@ const neutral = {
     1200: '#e1e6e6',
     1400: 'rgba(56, 52, 52, 0.8)',
     1500: 'rgba(239, 120, 34, 0.6)',
-    1600: '#EF78224D',
+    1600: '#d807074D',
     1700: '#192238',
     1800: '#1C1919',
 
@@ -48,7 +48,7 @@ const skeletonColorAfter =
     'linear-gradient(78.58deg, #F5F6F8 3.23%, #FDFDFD 53.13%, #F6F7F8 100%)'
 
 const primary = {
-    main: '#EF7822',
+    main: '#d80707',
     light: '#ff6700',
     dark: '#a3460a',
     contrastText: neutral[900],
@@ -112,9 +112,9 @@ const pending = {
 }
 const whiteContainer = {
     main: '#F9FAFC',
-    light: '#EF7822',
+    light: '#d80707',
     dark: '#ff903f',
-    contrastText: '#EF7822',
+    contrastText: '#d80707',
 }
 const customColor = {
     one: '#FF5E00',
