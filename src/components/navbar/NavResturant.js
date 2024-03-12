@@ -114,13 +114,164 @@ const NavResturant = ({ zoneid }) => {
                 underline="none"
             >
                 <Typography fontSize="14px">
-                    {t('Restaurants')}{' '}
-                    <KeyboardArrowDownIcon
-                        style={{ width: '16px', marginLeft: '5px' }}
-                    />
+                    {/* {t('Restaurants')}{' '} */}
+                    
+                    <Grid item container md={8} spacing={1}>
+                        {popularRestaurants
+                            ?.slice(0, 8)
+                            ?.map((restaurant, index) => {
+                                const restaurantIdOrSlug =
+                                    restaurant?.slug
+                                        ? restaurant?.slug
+                                        : restaurant?.id
+                                return (
+                                    <>
+                                        {index % 2 === 0 ? (
+                                            <Grid
+                                                item
+                                                md={6}
+                                                key={restaurant.id}
+                                            >
+                                                <Link
+                                                    href={{
+                                                        pathname:
+                                                            '/restaurant/[id]',
+                                                        query: {
+                                                            id: `${restaurantIdOrSlug}`,
+                                                            restaurant_zone_id:
+                                                                restaurant?.zone_id,
+                                                        },
+                                                    }}
+                                                    //href={`/restaurant/${restaurantIdOrSlug}`}
+                                                    passHref
+                                                >
+                                                    <MenuItem
+                                                        onClick={
+                                                            handleResdropClose
+                                                        }
+                                                        sx={{
+                                                            alignItems:
+                                                                'center',
+                                                            borderRadius:
+                                                                '5px',
+                                                            '&:hover': {
+                                                                backgroundColor:
+                                                                    (
+                                                                        theme
+                                                                    ) =>
+                                                                        alpha(
+                                                                            theme
+                                                                                .palette
+                                                                                .primary
+                                                                                .main,
+                                                                            0.3
+                                                                        ),
+                                                            },
+                                                        }}
+                                                    >
+                                                        <Stack
+                                                            spacing={
+                                                                2.5
+                                                            }
+                                                            direction="row"
+                                                            alignItems="center"
+                                                        >
+                                          
+                                                            <Typography
+                                                                variant="h5"
+                                                                fontWeight="400"
+                                                                color={(
+                                                                    theme
+                                                                ) =>
+                                                                    theme
+                                                                        .palette
+                                                                        .neutral[1000]
+                                                                }
+                                                            >
+                                                                {
+                                                                    restaurant.name
+                                                                }
+                                                            </Typography>
+                                                        </Stack>
+                                                    </MenuItem>
+                                                </Link>
+                                            </Grid>
+                                        ) : (
+                                            <Grid
+                                                item
+                                                md={6}
+                                                key={restaurant.id}
+                                            >
+                                                <Link
+                                                    href={`/restaurant/${restaurantIdOrSlug}`}
+                                                    passHref
+                                                >
+                                                    <MenuItem
+                                                        onClick={
+                                                            handleResdropClose
+                                                        }
+                                                        sx={{
+                                                            alignItems:
+                                                                'center',
+                                                            borderRadius:
+                                                                '5px',
+                                                            '&:hover': {
+                                                                backgroundColor:
+                                                                    (
+                                                                        theme
+                                                                    ) =>
+                                                                        alpha(
+                                                                            theme
+                                                                                .palette
+                                                                                .primary
+                                                                                .main,
+                                                                            0.3
+                                                                        ),
+                                                            },
+                                                        }}
+                                                    >
+                                                        <Stack
+                                                            spacing={
+                                                                2.5
+                                                            }
+                                                            direction="row"
+                                                            alignItems="center"
+                                                        >
+                                                            <CustomImageContainer
+                                                                src={`${restuarantImageUrl}/${restaurant.logo}`}
+                                                                width="40px"
+                                                                height="40px"
+                                                                borderRadius=".4rem"
+                                                                loading="lazy"
+                                                                objectFit="cover"
+                                                            />
+                                                            <Typography
+                                                                variant="h5"
+                                                                fontWeight="400"
+                                                                color={(
+                                                                    theme
+                                                                ) =>
+                                                                    theme
+                                                                        .palette
+                                                                        .neutral[1000]
+                                                                }
+                                                            >
+                                                                {
+                                                                    restaurant.name
+                                                                }
+                                                            </Typography>
+                                                        </Stack>
+                                                    </MenuItem>
+                                                </Link>
+                                            </Grid>
+                                        )}
+                                    </>
+                                )
+                            })}
+                    </Grid>
                 </Typography>
             </NavMenuLink>
-            <RTL direction={languageDirection}>
+            {/* <RTL direction={languageDirection}>
                 <Popover
                     disableScrollLock={true}
                     id="mouse-over-popover"
@@ -346,7 +497,7 @@ const NavResturant = ({ zoneid }) => {
                         )}
                     </Grid>
                 </Popover>
-            </RTL>
+            </RTL> */}
         </div>
     )
 }
