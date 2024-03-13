@@ -282,86 +282,7 @@ const SignInPage = ({
                                     errors={loginFormik.errors.phone}
                                     rtlChange="true"
                                 /> */}
-                                <FormControl
-                                    variant="outlined"
-                                    fullWidth
-                                >
-                                    <InputLabel
-                                        required
-                                        sx={{
-                                            color: (theme) =>
-                                                theme.palette.neutral[600],
-                                            fontSize:"14px"
-
-                                        }}
-                                        htmlFor="outlined-adornment-password"
-                                    >
-                                        {t('Password')}
-                                    </InputLabel>
-                                    <CustomSigninOutLine
-
-                                        required
-                                        type={
-                                            showPassword ? 'text' : 'password'
-                                        }
-                                        id="password"
-                                        name="password"
-                                        placeholder={t("Enter your password")}
-                                        value={loginFormik.values.password}
-                                        onChange={loginFormik.handleChange}
-                                        error={
-                                            loginFormik.touched.password &&
-                                            Boolean(loginFormik.errors.password)
-                                        }
-                                        helperText={
-                                            loginFormik.touched.password &&
-                                            loginFormik.errors.password
-                                        }
-                                        touched={loginFormik.touched.password}
-                                        endAdornment={
-                                            <InputAdornment position="end" >
-                                                <IconButton
-                                                    aria-label="toggle password visibility"
-                                                    onClick={() =>
-                                                        setShowPassword(
-                                                            (prevState) =>
-                                                                !prevState
-                                                        )
-                                                    }
-                                                    //   onMouseDown={handleMouseDownPassword}
-                                                    edge="end"
-                                                >
-                                                    {showPassword ? (
-                                                        <Visibility sx={{width:"20px",height:"20px",color:theme=>alpha(theme.palette.neutral[400],.6)}} />
-                                                    ) : (
-                                                        <VisibilityOff sx={{width:"20px",height:"20px",color:theme=>alpha(theme.palette.neutral[400],.6)}} />
-                                                    )}
-                                                </IconButton>
-                                            </InputAdornment>
-                                        }
-                                        startAdornment={ <InputAdornment position="start" sx={{marginInlineEnd:"0px !important"}}>
-                                            <IconButton
-                                                aria-label="toggle password visibility"
-
-                                                edge="start"
-                                            >
-                                             <LockIcon sx={{fontSize:"1.2rem"}}/>
-                                            </IconButton>
-                                        </InputAdornment>}
-                                        label="Password"
-                                    />
-                                    {loginFormik.errors.password && (
-                                        <CustomTypography
-                                            variant="subtitle2"
-                                            sx={{
-                                                color: (theme) =>
-                                                    theme.palette.error.main,
-                                            }}
-                                        >
-                                            {loginFormik.errors.password}
-                                        </CustomTypography>
-                                    )}
-                                </FormControl>
+                             
                                 <FormControl
                                     variant="outlined"
                                     fullWidth
@@ -439,6 +360,86 @@ const SignInPage = ({
                                             }}
                                         >
                                             {loginFormik.errors.email}
+                                        </CustomTypography>
+                                    )}
+                                </FormControl>
+                                <FormControl
+                                    variant="outlined"
+                                    fullWidth
+                                >
+                                    <InputLabel
+                                        required
+                                        sx={{
+                                            color: (theme) =>
+                                                theme.palette.neutral[600],
+                                            fontSize:"14px"
+
+                                        }}
+                                        htmlFor="outlined-adornment-password"
+                                    >
+                                        {t('Password')}
+                                    </InputLabel>
+                                    <CustomSigninOutLine
+
+                                        required
+                                        type={
+                                            showPassword ? 'text' : 'password'
+                                        }
+                                        id="password"
+                                        name="password"
+                                        placeholder={t("Enter your password")}
+                                        value={loginFormik.values.password}
+                                        onChange={loginFormik.handleChange}
+                                        error={
+                                            loginFormik.touched.password &&
+                                            Boolean(loginFormik.errors.password)
+                                        }
+                                        helperText={
+                                            loginFormik.touched.password &&
+                                            loginFormik.errors.password
+                                        }
+                                        touched={loginFormik.touched.password}
+                                        endAdornment={
+                                            <InputAdornment position="end" >
+                                                <IconButton
+                                                    aria-label="toggle password visibility"
+                                                    onClick={() =>
+                                                        setShowPassword(
+                                                            (prevState) =>
+                                                                !prevState
+                                                        )
+                                                    }
+                                                    //   onMouseDown={handleMouseDownPassword}
+                                                    edge="end"
+                                                >
+                                                    {showPassword ? (
+                                                        <Visibility sx={{width:"20px",height:"20px",color:theme=>alpha(theme.palette.neutral[400],.6)}} />
+                                                    ) : (
+                                                        <VisibilityOff sx={{width:"20px",height:"20px",color:theme=>alpha(theme.palette.neutral[400],.6)}} />
+                                                    )}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        }
+                                        startAdornment={ <InputAdornment position="start" sx={{marginInlineEnd:"0px !important"}}>
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+
+                                                edge="start"
+                                            >
+                                             <LockIcon sx={{fontSize:"1.2rem"}}/>
+                                            </IconButton>
+                                        </InputAdornment>}
+                                        label="Password"
+                                    />
+                                    {loginFormik.errors.password && (
+                                        <CustomTypography
+                                            variant="subtitle2"
+                                            sx={{
+                                                color: (theme) =>
+                                                    theme.palette.error.main,
+                                            }}
+                                        >
+                                            {loginFormik.errors.password}
                                         </CustomTypography>
                                     )}
                                 </FormControl>

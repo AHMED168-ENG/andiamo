@@ -45,12 +45,12 @@ const NavLinks = ({ zoneid, t, languageDirection }) => {
                         languageDirection={languageDirection}
                     /> */}
 
-                    <NavResturant
+                    {/* <NavResturant
                         openModal={openRestaurantModal}
                         setModal={setRestaurantModal}
                         zoneid={zoneid}
                         languageDirection={languageDirection}
-                    />
+                    /> */}
                 </>
             )}
         </Stack>
