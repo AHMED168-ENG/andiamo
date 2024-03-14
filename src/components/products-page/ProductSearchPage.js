@@ -222,7 +222,7 @@ const ProductSearchPage = ({
     useEffect(() => {
         setOffset(1)
     }, [searchTagData,selectedName,searchValue]);
-
+    console.log(foodOrRestaurant)
     return (
         <>
             <Meta
