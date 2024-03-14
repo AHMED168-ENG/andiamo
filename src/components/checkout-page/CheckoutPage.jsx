@@ -936,7 +936,7 @@ const CheckoutPage = () => {
                             setUsePartialPayment={setUsePartialPayment}
                             setSwitchToWallet={setSwitchToWallet}
                         />
-                        {page !== 'campaign' &&
+                        {/* {page !== 'campaign' &&
                             subscriptionStates.order === '0' && (
                                 <RestaurantScheduleTime
                                     restaurantData={restaurantData}
@@ -947,7 +947,7 @@ const CheckoutPage = () => {
                                     global={global}
                                     setScheduleAt={setScheduleAt}
                                 />
-                            )}
+                            )} */}
                         {subscriptionStates.order === '0' &&
                             orderType !== 'take_away' &&
                             Number.parseInt(global?.dm_tips_status) === 1 && (

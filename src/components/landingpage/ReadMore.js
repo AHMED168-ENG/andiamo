@@ -19,7 +19,7 @@ export const ReadMore = ({ children, limits, color }) => {
             fontWeight="400"
             color={color ? color : theme.palette.neutral[600]}
         >
-            {isReadMore ? text?.slice(0, fontLimits) : text}
+            {/* {isReadMore ? text?.slice(0, fontLimits) : text} */}
             {text?.length > fontLimits && (
                 <span
                     onClick={toggleReadMore}
